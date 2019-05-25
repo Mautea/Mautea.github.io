@@ -12,17 +12,17 @@
 <meta name="keywords" content="编程">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git版本控制">
-<meta property="og:url" content="https://mautea.github.io/posts/knowledge/git-linux.html">
+<meta property="og:url" content="https://mautea.github.io/posts/linux/git-linux.html">
 <meta property="og:site_name" content="Mautea日常技术分享">
 <meta property="og:description" content="Git是一个分布式版本控制系统,可以有效、高速地处理从很小到非常大的项目版本管理,是个人认为目前最先进的版本控制系统 不同区的工作关系      Remote Repository: 远程仓库（克隆代码的原始仓库）   Local Repository:  本地仓库   Stage:             暂存区，用于临时存放你的改动   Workspace:         工作区，平时存放项">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://mautea.github.io/posts/knowledge/git-linux/git-01.jpg">
-<meta property="og:image" content="https://mautea.github.io/posts/knowledge/git-linux/git-02.jpg">
-<meta property="og:updated_time" content="2019-05-25T14:09:14.477Z">
+<meta property="og:image" content="https://mautea.github.io/posts/linux/git-linux/git-01.jpg">
+<meta property="og:image" content="https://mautea.github.io/posts/linux/git-linux/git-02.jpg">
+<meta property="og:updated_time" content="2019-05-25T16:13:49.426Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git版本控制">
 <meta name="twitter:description" content="Git是一个分布式版本控制系统,可以有效、高速地处理从很小到非常大的项目版本管理,是个人认为目前最先进的版本控制系统 不同区的工作关系      Remote Repository: 远程仓库（克隆代码的原始仓库）   Local Repository:  本地仓库   Stage:             暂存区，用于临时存放你的改动   Workspace:         工作区，平时存放项">
-<meta name="twitter:image" content="https://mautea.github.io/posts/knowledge/git-linux/git-01.jpg">
+<meta name="twitter:image" content="https://mautea.github.io/posts/linux/git-linux/git-01.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Mautea日常技术分享" type="application/atom+xml">
   
@@ -53,9 +53,12 @@
 		<a href="/" class="profilepic">
 			<img src="https://mautea.github.io/img/me.jpeg" class="js-avatar show">
 		</a>
+
 		<hgroup>
 		  <h1 class="header-author"><a href="/">Mautea</a></h1>
 		</hgroup>
+		
+		<p class="header-subtitle">怕什么真理无穷,进步一寸,就有进步一寸的欢喜</p>
 		
 
 		<nav class="header-menu">
@@ -63,22 +66,18 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/tags/随笔/">随笔</a></li>
+				<li><a href="/archives">归档</a></li>
 	        
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
     		
     			
-    			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">所有文章</a>
+    			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">文章</a>
     			
             
     			
-    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">友链</a>
-    			
-            
-    			
-    			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
+    			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于</a>
     			
             
 		</nav>
@@ -94,6 +93,11 @@
 					<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
 		        
 			</div>
+			
+			<!--<div style = "position:absolute;bottom:120px left:auto; width:85%">
+				<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=260 height=52 src="//music.163.com/outchain/player?type=2&id=525239617&auto=0&height=32">
+				</iframe>
+			</div>-->
 		</nav>
 	</header>		
 </div>
@@ -114,6 +118,8 @@
 			<hgroup>
 			  <h1 class="header-author js-header-author">Mautea</h1>
 			</hgroup>
+			
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>怕什么真理无穷,进步一寸,就有进步一寸的欢喜<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -143,7 +149,7 @@
 				
 					<li style="width: 50%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/随笔/">随笔</a></li>
+					<li style="width: 50%"><a href="/archives">归档</a></li>
 		        
 				</ul>
 			</nav>
@@ -170,7 +176,7 @@
   
 
         
-        <a href="/posts/knowledge/git-linux.html" class="archive-article-date">
+        <a href="/posts/linux/git-linux.html" class="archive-article-date">
   	<time datetime="2019-05-24T09:44:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-24</time>
 </a>
         
@@ -179,13 +185,14 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>Git是一个分布式版本控制系统,可以有效、高速地处理从很小到非常大的项目版本管理,是个人认为目前最先进的版本控制系统</p>
-<h2 id="不同区的工作关系"><a href="#不同区的工作关系" class="headerlink" title="不同区的工作关系"></a>不同区的工作关系</h2><p>   <img src="/posts/knowledge/git-linux/git-01.jpg" alt="工作链路图"><br>   Remote Repository: 远程仓库（克隆代码的原始仓库）<br>   Local Repository:  本地仓库<br>   Stage:             暂存区，用于临时存放你的改动<br>   Workspace:         工作区，平时存放项目代码的地方</p>
-<h2 id="开发模式"><a href="#开发模式" class="headerlink" title="开发模式"></a>开发模式</h2><p>   <img src="/posts/knowledge/git-linux/git-02.jpg" alt="开发模式"></p>
+<h2 id="不同区的工作关系"><a href="#不同区的工作关系" class="headerlink" title="不同区的工作关系"></a>不同区的工作关系</h2><p>   <img src="/posts/linux/git-linux/git-01.jpg" alt="工作链路图"><br>   Remote Repository: 远程仓库（克隆代码的原始仓库）<br>   Local Repository:  本地仓库<br>   Stage:             暂存区，用于临时存放你的改动<br>   Workspace:         工作区，平时存放项目代码的地方</p>
+<a id="more"></a>
+
+
+<h2 id="开发模式"><a href="#开发模式" class="headerlink" title="开发模式"></a>开发模式</h2><p>   <img src="/posts/linux/git-linux/git-02.jpg" alt="开发模式"></p>
 <h2 id="开发流程"><a href="#开发流程" class="headerlink" title="开发流程"></a>开发流程</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> http://xxxxx.git <span class="comment"># 克隆代码</span></span><br><span class="line">$ git branch <span class="comment"># 新创建一个分支</span></span><br><span class="line"><span class="comment">#开发中...</span></span><br><span class="line"><span class="comment">#开发完毕...</span></span><br><span class="line">$ git status <span class="comment"># 查看修改了哪些文件</span></span><br><span class="line">$ git add -A  <span class="comment"># 如果只add 某个文件 git add filename</span></span><br><span class="line">$ git diff <span class="comment"># 查看修改了哪些内容</span></span><br><span class="line">$ git commit -a -m <span class="string">"修改的内容"</span> <span class="comment"># 确认没问题，提交修改的内容到本地仓库</span></span><br><span class="line">$ git push <span class="comment"># 将修改的内容推送到远程仓库</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="常用命令简写"><a href="#常用命令简写" class="headerlink" title="常用命令简写"></a>常用命令简写</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ git config -–global alias.st status  <span class="comment"># git st == git status  </span></span><br><span class="line">$ git config -–global alias.co checkout <span class="comment"># git co == git checkout</span></span><br><span class="line">$ git config -–global alias.ci commit  <span class="comment"># git ci == git commit</span></span><br><span class="line">$ git config -–global alias.br branch <span class="comment"># git br == git branch</span></span><br><span class="line">$ git config --global user.name <span class="string">"Mautea"</span> <span class="comment"># 你的github用户名，非昵称</span></span><br><span class="line">$ git config --global user.email  <span class="string">"xxx@qq.com"</span> <span class="comment"># 填写你的github注册邮箱</span></span><br></pre></td></tr></table></figure>
-
-<a id="more"></a>
 
 <h2 id="版本回退"><a href="#版本回退" class="headerlink" title="版本回退"></a>版本回退</h2><p>在开发过程中，总会遇到代码误提交或者将错误代码提交的情况，遇到这种情况不要慌，下面教你几招<br>例如 我有如下 三次提交</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">log</span> <span class="comment"># 查看提交记录</span></span><br><span class="line"></span><br><span class="line">commit 4dc08bb8996a6ee02f</span><br><span class="line">Author: Mark &lt;xxx@xx.com&gt;</span><br><span class="line">Date:   Wed Sep 7 08:08:53 2016 +0800</span><br><span class="line"></span><br><span class="line">    something <span class="keyword">for</span> <span class="built_in">test</span></span><br><span class="line"></span><br><span class="line">commit 9cac9ba76574da2167</span><br><span class="line">Author: xxx&lt;xx@qq.com&gt;</span><br><span class="line">Date:   Tue Sep 6 22:18:59 2016 +0800</span><br><span class="line"></span><br><span class="line">	improved the requst</span><br><span class="line"></span><br><span class="line">commit e377f60e28c8b84158</span><br><span class="line">Author: xxx&lt;xxx@qq.com&gt;</span><br><span class="line">Date:   Tue Sep 6 14:42:44 2016 +0800</span><br><span class="line"></span><br><span class="line">	changed the password</span><br></pre></td></tr></table></figure>
@@ -254,7 +261,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/knowledge//" class="article-tag-list-link color5">Knowledge</a>
+        			<a href="/categories/linux//" class="article-tag-list-link color1">linux</a>
         		</li>
       		
 		</ul>
@@ -309,7 +316,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://mautea.github.io/posts/knowledge/git-linux.html" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://mautea.github.io/posts/linux/git-linux.html" alt="微信分享二维码">
     </div>
 </div>
 
@@ -374,11 +381,12 @@
     		&copy; 2019 Mautea
     	</div>
       	<div class="footer-right">
-      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      		<a href="http://mautea.github.io/" target="_blank">Mautea</a>  write <a href="http://mautea.github.io/" target="_blank">Blog</a> by Litten
       	</div>
     </div>
   </div>
 </footer>
+
     </div>
     <script>
 	var yiliaConfig = {
@@ -415,25 +423,17 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
       
       
     
-      
-      
-      
-    
     
 
     <ul style="width: 70%">
     
     
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">文章</a></li>
       
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">友链</a></li>
-      
-        
-      
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于</a></li>
       
         
     </ul>
@@ -500,10 +500,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     	</section>
     
 
-    
-    	<section class="tools-section tools-section-friends" q-show="friends">
-  		
-    	</section>
     
 
     
