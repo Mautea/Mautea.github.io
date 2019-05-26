@@ -6,18 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://mautea.github.io">
-  <title>Mautea日常技术分享</title>
+  <title>整数反转 | Mautea日常技术分享</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="程序员日常工作记录分享，欢迎各路大神指点和吐槽">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Mautea日常技术分享">
-<meta property="og:url" content="https://mautea.github.io/index.html">
+  <meta name="description" content="整数反转，题目相对简单，主要是考虑在反转中，整数溢出的问题 题目描述给出一个 32 位的有符号整数，你需要将这个整数中每位上的数字进行反转。 示例1:12输入: 123输出: 321  示例2:12输入: -123输出: -321  示例3:12输入: 120输出: 21">
+<meta name="keywords" content="编程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="整数反转">
+<meta property="og:url" content="https://mautea.github.io/posts/algorithm/number-reverse.html">
 <meta property="og:site_name" content="Mautea日常技术分享">
-<meta property="og:description" content="程序员日常工作记录分享，欢迎各路大神指点和吐槽">
+<meta property="og:description" content="整数反转，题目相对简单，主要是考虑在反转中，整数溢出的问题 题目描述给出一个 32 位的有符号整数，你需要将这个整数中每位上的数字进行反转。 示例1:12输入: 123输出: 321  示例2:12输入: -123输出: -321  示例3:12输入: 120输出: 21">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-05-26T12:30:46.667Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mautea日常技术分享">
-<meta name="twitter:description" content="程序员日常工作记录分享，欢迎各路大神指点和吐槽">
+<meta name="twitter:title" content="整数反转">
+<meta name="twitter:description" content="整数反转，题目相对简单，主要是考虑在反转中，整数溢出的问题 题目描述给出一个 32 位的有符号整数，你需要将这个整数中每位上的数字进行反转。 示例1:12输入: 123输出: 321  示例2:12输入: -123输出: -321  示例3:12输入: 120输出: 21">
   
     <link rel="alternative" href="/atom.xml" title="Mautea日常技术分享" type="application/atom+xml">
   
@@ -158,16 +160,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-number-reverse" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-number-reverse" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/posts/algorithm/number-reverse.html">整数反转</a>
+    <h1 class="article-title" itemprop="name">
+      整数反转
     </h1>
   
 
@@ -187,11 +187,48 @@
 <h4 id="示例2"><a href="#示例2" class="headerlink" title="示例2:"></a>示例2:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: -123</span><br><span class="line">输出: -321</span><br></pre></td></tr></table></figure>
 
 <h4 id="示例3"><a href="#示例3" class="headerlink" title="示例3:"></a>示例3:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: 120</span><br><span class="line">输出: 21</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/posts/algorithm/number-reverse.html#more">more >></a>
-        
+
+<a id="more"></a>
+
+<h3 id="解答思路"><a href="#解答思路" class="headerlink" title="解答思路"></a>解答思路</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">思路一：</span><br><span class="line"></span><br><span class="line">1、整数转化为字符串</span><br><span class="line">2、反转</span><br><span class="line">3、反转后字符串转化为整数</span><br><span class="line">4、注意 整数溢出、负数、 末尾是0的情况</span><br><span class="line"></span><br><span class="line">思路二</span><br><span class="line"></span><br><span class="line">对 x 进行逐个 除 10 取 个位，一旦溢出，直接跳出循环</span><br></pre></td></tr></table></figure>
+
+<h3 id="解答代码"><a href="#解答代码" class="headerlink" title="解答代码"></a>解答代码</h3><p>思路一就不实现了，用PHP代码很好实现，今天主要是用go写一下思路的二的代码，不喜勿喷</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">const INT_MIN = -2147483648 <span class="comment"># go 最小整数定义常量</span></span><br><span class="line">const INT_MAX = 2147483647 <span class="comment"># go 最大整数定义常量</span></span><br><span class="line"></span><br><span class="line">func reverse(x int) int &#123; </span><br><span class="line">    var dealNum int</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> x != 0 &#123;</span><br><span class="line">	pop := x % 10</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> dealNum &gt; INT_MAX/10 || (dealNum == INT_MAX/10 &amp;&amp; pop &gt; 7) &#123;</span><br><span class="line">	  <span class="built_in">return</span> 0</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> dealNum &lt; INT_MIN/10 || (dealNum == INT_MIN/10 &amp;&amp; pop &lt; -8) &#123;</span><br><span class="line">	  <span class="built_in">return</span> 0</span><br><span class="line">	&#125;</span><br><span class="line">		</span><br><span class="line">	dealNum = dealNum * 10 + pop</span><br><span class="line">	x = x/10</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">return</span> dealNum</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://mautea.github.io/img/zhifubao.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://mautea.github.io/img/alipay.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -224,10 +261,73 @@
       
 
       
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://mautea.github.io/posts/algorithm/number-reverse.html" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/posts/linux/git-linux.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Git版本控制</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -247,92 +347,14 @@
 
 
 
-
   
-    <article id="post-git-linux" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/posts/linux/git-linux.html">Git版本控制</a>
-    </h1>
   
 
-        
-        <a href="/posts/linux/git-linux.html" class="archive-article-date">
-  	<time datetime="2019-05-24T09:44:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Git是一个分布式版本控制系统,可以有效、高速地处理从很小到非常大的项目版本管理,是个人认为目前最先进的版本控制系统</p>
-<h2 id="不同区的工作关系"><a href="#不同区的工作关系" class="headerlink" title="不同区的工作关系"></a>不同区的工作关系</h2><p>   <img src="/posts/linux/git-linux/git-01.jpg" alt="工作链路图"><br>   Remote Repository: 远程仓库（克隆代码的原始仓库）<br>   Local Repository:  本地仓库<br>   Stage:             暂存区，用于临时存放你的改动<br>   Workspace:         工作区，平时存放项目代码的地方</p>
-        
-          <a class="article-more-a" href="/posts/linux/git-linux.html#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">编程</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/linux//" class="article-tag-list-link color1">linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
+  
 
   
+
   
 
 
@@ -356,8 +378,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
