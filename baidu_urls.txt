@@ -1,2 +1,2 @@
-https://mautea.github.io/posts/algorithm/number-reverse.html
-https://mautea.github.io/posts/linux/git-linux.html
+https://www.mautea.cn/posts/algorithm/number-reverse.html
+https://www.mautea.cn/posts/linux/git-linux.html

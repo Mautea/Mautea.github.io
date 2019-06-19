@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="dns-prefetch" href="https://mautea.github.io">
+  <link rel="dns-prefetch" href="https://www.mautea.cn">
   <title>Git版本控制 | Mautea日常技术分享</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Git是一个分布式版本控制系统,可以有效、高速地处理从很小到非常大的项目版本管理,是个人认为目前最先进的版本控制系统 不同区的工作关系      Remote Repository: 远程仓库（克隆代码的原始仓库）   Local Repository:  本地仓库   Stage:             暂存区，用于临时存放你的改动   Workspace:         工作区，平时存放项">
 <meta name="keywords" content="编程">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git版本控制">
-<meta property="og:url" content="https://mautea.github.io/posts/linux/git-linux.html">
+<meta property="og:url" content="https://www.mautea.cn/posts/linux/git-linux.html">
 <meta property="og:site_name" content="Mautea日常技术分享">
 <meta property="og:description" content="Git是一个分布式版本控制系统,可以有效、高速地处理从很小到非常大的项目版本管理,是个人认为目前最先进的版本控制系统 不同区的工作关系      Remote Repository: 远程仓库（克隆代码的原始仓库）   Local Repository:  本地仓库   Stage:             暂存区，用于临时存放你的改动   Workspace:         工作区，平时存放项">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://mautea.github.io/posts/linux/git-linux/git-01.jpg">
-<meta property="og:image" content="https://mautea.github.io/posts/linux/git-linux/git-02.jpg">
-<meta property="og:updated_time" content="2019-05-28T14:48:06.888Z">
+<meta property="og:image" content="https://www.mautea.cn/posts/linux/git-linux/git-01.jpg">
+<meta property="og:image" content="https://www.mautea.cn/posts/linux/git-linux/git-02.jpg">
+<meta property="og:updated_time" content="2019-05-28T14:48:06.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git版本控制">
 <meta name="twitter:description" content="Git是一个分布式版本控制系统,可以有效、高速地处理从很小到非常大的项目版本管理,是个人认为目前最先进的版本控制系统 不同区的工作关系      Remote Repository: 远程仓库（克隆代码的原始仓库）   Local Repository:  本地仓库   Stage:             暂存区，用于临时存放你的改动   Workspace:         工作区，平时存放项">
-<meta name="twitter:image" content="https://mautea.github.io/posts/linux/git-linux/git-01.jpg">
+<meta name="twitter:image" content="https://www.mautea.cn/posts/linux/git-linux/git-01.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Mautea日常技术分享" type="application/atom+xml">
   
@@ -51,7 +51,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="https://mautea.github.io/img/me.jpeg" class="js-avatar show">
+			<img  src="https://mautea.github.io/img/me.jpeg" class="js-avatar show">
 		</a>
 
 		<hgroup>
@@ -96,7 +96,7 @@
 		</nav>
 
 		<div style="left:auto; width:85%">
-			<iframe style="margin-top: 60px" frameborder="no" border="0" marginwidth="0" marginheight="0" width="260" height="52" src="//music.163.com/outchain/player?type=2&id=443292501&auto=0&height=32"></iframe>
+			<iframe style = "margin-top: 60px" frameborder="no" border="0" marginwidth="0" marginheight="0" width=260 height=52 src="//music.163.com/outchain/player?type=2&id=443292501&auto=0&height=32"></iframe>
 		</div>
 	</header>		
 </div>
@@ -315,7 +315,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://mautea.github.io/posts/linux/git-linux.html" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://www.mautea.cn/posts/linux/git-linux.html" alt="微信分享二维码">
     </div>
 </div>
 
@@ -362,7 +362,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#不同区的工作关系"><span class="toc-number">1.</span> <span class="toc-text">不同区的工作关系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#开发模式"><span class="toc-number">2.</span> <span class="toc-text">开发模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#开发流程"><span class="toc-number">3.</span> <span class="toc-text">开发流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常用命令简写"><span class="toc-number">4.</span> <span class="toc-text">常用命令简写</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#版本回退"><span class="toc-number">5.</span> <span class="toc-text">版本回退</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#只回滚本地代码"><span class="toc-number">5.0.1.</span> <span class="toc-text">只回滚本地代码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#回滚远程代码"><span class="toc-number">5.0.2.</span> <span class="toc-text">回滚远程代码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#撤销某一次提交-不影响中间别人提交的代码"><span class="toc-number">5.0.3.</span> <span class="toc-text">撤销某一次提交 不影响中间别人提交的代码</span></a></li></ol></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#常用命令"><span class="toc-number">6.</span> <span class="toc-text">常用命令</span></a></li>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#不同区的工作关系"><span class="toc-number">1.</span> <span class="toc-text">不同区的工作关系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#开发模式"><span class="toc-number">2.</span> <span class="toc-text">开发模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#开发流程"><span class="toc-number">3.</span> <span class="toc-text">开发流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常用命令简写"><span class="toc-number">4.</span> <span class="toc-text">常用命令简写</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#版本回退"><span class="toc-number">5.</span> <span class="toc-text">版本回退</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#只回滚本地代码"><span class="toc-number">5.0.1.</span> <span class="toc-text">只回滚本地代码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#回滚远程代码"><span class="toc-number">5.0.2.</span> <span class="toc-text">回滚远程代码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#撤销某一次提交-不影响中间别人提交的代码"><span class="toc-number">5.0.3.</span> <span class="toc-text">撤销某一次提交 不影响中间别人提交的代码</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常用命令"><span class="toc-number">6.</span> <span class="toc-text">常用命令</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -475,7 +475,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         </div>
         <ul class="search-ul">
           <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
-            缺失模块。<br>1、请确保node版本大于6.2<br>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br> npm i hexo-generator-json-content --save<br><br>
+            缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
             3、在根目录_config.yml里添加配置：
 <pre style="font-size: 12px;" q-show="jsonFail">
   jsonContent:
