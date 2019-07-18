@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="https://www.mautea.cn">
   <title>两数求和 | Mautea日常技术分享</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="题目描述给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。 你可以假设每种输入只会对应一个答案。但是，你不能重复利用这个数组中同样的元素。 示例1:1234给定 nums = [2, 7, 11, 15], target = 9因为 nums[0] + nums[1] = 2 + 7 = 9所以返回 [0, 1]  解题思路">
+  <meta name="description" content="题目描述给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。 你可以假设每种输入只会对应一个答案。但是，你不能重复利用这个数组中同样的元素。 示例1:1234给定 nums = [2, 7, 11, 15], target = 9因为 nums[0] + nums[1] = 2 + 7 = 9所以返回 [0, 1]">
 <meta name="keywords" content="编程">
 <meta property="og:type" content="article">
 <meta property="og:title" content="两数求和">
 <meta property="og:url" content="https://www.mautea.cn/posts/algorithm/two_number_sum.html">
 <meta property="og:site_name" content="Mautea日常技术分享">
-<meta property="og:description" content="题目描述给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。 你可以假设每种输入只会对应一个答案。但是，你不能重复利用这个数组中同样的元素。 示例1:1234给定 nums = [2, 7, 11, 15], target = 9因为 nums[0] + nums[1] = 2 + 7 = 9所以返回 [0, 1]  解题思路">
+<meta property="og:description" content="题目描述给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。 你可以假设每种输入只会对应一个答案。但是，你不能重复利用这个数组中同样的元素。 示例1:1234给定 nums = [2, 7, 11, 15], target = 9因为 nums[0] + nums[1] = 2 + 7 = 9所以返回 [0, 1]">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-18T15:55:36.376Z">
+<meta property="og:updated_time" content="2019-07-18T15:57:04.922Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="两数求和">
-<meta name="twitter:description" content="题目描述给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。 你可以假设每种输入只会对应一个答案。但是，你不能重复利用这个数组中同样的元素。 示例1:1234给定 nums = [2, 7, 11, 15], target = 9因为 nums[0] + nums[1] = 2 + 7 = 9所以返回 [0, 1]  解题思路">
+<meta name="twitter:description" content="题目描述给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。 你可以假设每种输入只会对应一个答案。但是，你不能重复利用这个数组中同样的元素。 示例1:1234给定 nums = [2, 7, 11, 15], target = 9因为 nums[0] + nums[1] = 2 + 7 = 9所以返回 [0, 1]">
   
     <link rel="alternative" href="/atom.xml" title="Mautea日常技术分享" type="application/atom+xml">
   
@@ -183,6 +183,8 @@
         <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。</p>
 <p>你可以假设每种输入只会对应一个答案。但是，你不能重复利用这个数组中同样的元素。</p>
 <h4 id="示例1"><a href="#示例1" class="headerlink" title="示例1:"></a>示例1:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">给定 nums = [2, 7, 11, 15], target = 9</span><br><span class="line"></span><br><span class="line">因为 nums[0] + nums[1] = 2 + 7 = 9</span><br><span class="line">所以返回 [0, 1]</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
 
 <h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><p>1、暴力法 相对来说 比较简单，两层循环，时间复杂度O(n^2)。</p>
 <p>2、map解答法 循环数组， 将 map[target - nums[i]] = i; 判断i 是否存在map中时间复杂度O(n) 空间复杂度O(n)。</p>
