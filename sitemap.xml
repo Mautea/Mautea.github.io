@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.mautea.cn/posts/algorithm/two_number_sum.html</loc>
+    
+    <lastmod>2019-07-18T15:55:17.171Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.mautea.cn/posts/linux/git-linux.html</loc>
     
     <lastmod>2019-06-19T13:25:15.000Z</lastmod>

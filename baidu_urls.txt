@@ -1,2 +1,3 @@
+https://www.mautea.cn/posts/algorithm/two_number_sum.html
 https://www.mautea.cn/posts/algorithm/number-reverse.html
 https://www.mautea.cn/posts/linux/git-linux.html

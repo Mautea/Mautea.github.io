@@ -160,6 +160,94 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-tow-number-sum" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/posts/algorithm/two_number_sum.html">两数求和</a>
+    </h1>
+  
+
+        
+        <a href="/posts/algorithm/two_number_sum.html" class="archive-article-date">
+  	<time datetime="2019-07-18T15:10:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。</p>
+<p>你可以假设每种输入只会对应一个答案。但是，你不能重复利用这个数组中同样的元素。</p>
+<h4 id="示例1"><a href="#示例1" class="headerlink" title="示例1:"></a>示例1:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">给定 nums = [2, 7, 11, 15], target = 9</span><br><span class="line"></span><br><span class="line">因为 nums[0] + nums[1] = 2 + 7 = 9</span><br><span class="line">所以返回 [0, 1]</span><br></pre></td></tr></table></figure>
+
+<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><p>1、暴力法 相对来说 比较简单，两层循环，时间复杂度O(n^2)。</p>
+<p>2、map解答法 循环数组， 将 map[target - nums[i]] = i; 判断i 是否存在map中时间复杂度O(n) 空间复杂度O(n)。</p>
+<h3 id="解答代码"><a href="#解答代码" class="headerlink" title="解答代码"></a>解答代码</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># 暴力法</span></span><br><span class="line"></span><br><span class="line">func twoSum(nums []int, target int) []int &#123;</span><br><span class="line">	len := len(nums)</span><br><span class="line">	<span class="keyword">for</span> i := 0; i &lt; len -1; i ++ &#123;</span><br><span class="line">		<span class="keyword">for</span> j := i + 1; j &lt; len; j++ &#123;</span><br><span class="line">			<span class="keyword">if</span> (nums[i] + nums[j] == target) &#123;</span><br><span class="line">				<span class="built_in">return</span> []int&#123;i, j&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">return</span> []int&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># map解答法</span></span><br><span class="line"></span><br><span class="line">func twoSum(nums []int, target int) []int &#123; </span><br><span class="line">	tmpMap := make(map[int]int)</span><br><span class="line">	<span class="keyword">for</span> index, value := range nums &#123;</span><br><span class="line">		indexExist, exists := tmpMap[value]</span><br><span class="line">		<span class="keyword">if</span> exists &#123;</span><br><span class="line">			<span class="built_in">return</span> []int&#123;indexExist, index&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		diffValue := target - value</span><br><span class="line">		tmpMap[diffValue] = index</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">return</span> []int&#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">编程</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/algorithm//" class="article-tag-list-link color3">算法</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-number-reverse" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
