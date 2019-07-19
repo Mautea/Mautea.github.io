@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="https://www.mautea.cn">
   <title>回文数 | Mautea日常技术分享</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="题目描述判断一个整数是否是回文数。回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数 示例1:123输入: 121输出: true  示例2:1234输入: -121输出: false解释: 从左向右读, 为 -121 。 从右向左读, 为 121- 。因此它不是一个回文数。  示例3:1234输入: 10输出: false解释: 从右向左读, 为 01 。因此它不是一个回文数  解题思">
+  <meta name="description" content="题目描述判断一个整数是否是回文数。回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数 示例1:123输入: 121输出: true  示例2:1234输入: -121输出: false解释: 从左向右读, 为 -121 。 从右向左读, 为 121- 。因此它不是一个回文数。  示例3:1234输入: 10输出: false解释: 从右向左读, 为 01 。因此它不是一个回文数">
 <meta name="keywords" content="编程">
 <meta property="og:type" content="article">
 <meta property="og:title" content="回文数">
 <meta property="og:url" content="https://www.mautea.cn/posts/algorithm/palindrome.html">
 <meta property="og:site_name" content="Mautea日常技术分享">
-<meta property="og:description" content="题目描述判断一个整数是否是回文数。回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数 示例1:123输入: 121输出: true  示例2:1234输入: -121输出: false解释: 从左向右读, 为 -121 。 从右向左读, 为 121- 。因此它不是一个回文数。  示例3:1234输入: 10输出: false解释: 从右向左读, 为 01 。因此它不是一个回文数  解题思">
+<meta property="og:description" content="题目描述判断一个整数是否是回文数。回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数 示例1:123输入: 121输出: true  示例2:1234输入: -121输出: false解释: 从左向右读, 为 -121 。 从右向左读, 为 121- 。因此它不是一个回文数。  示例3:1234输入: 10输出: false解释: 从右向左读, 为 01 。因此它不是一个回文数">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-19T16:32:28.272Z">
+<meta property="og:updated_time" content="2019-07-19T16:36:05.117Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="回文数">
-<meta name="twitter:description" content="题目描述判断一个整数是否是回文数。回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数 示例1:123输入: 121输出: true  示例2:1234输入: -121输出: false解释: 从左向右读, 为 -121 。 从右向左读, 为 121- 。因此它不是一个回文数。  示例3:1234输入: 10输出: false解释: 从右向左读, 为 01 。因此它不是一个回文数  解题思">
+<meta name="twitter:description" content="题目描述判断一个整数是否是回文数。回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数 示例1:123输入: 121输出: true  示例2:1234输入: -121输出: false解释: 从左向右读, 为 -121 。 从右向左读, 为 121- 。因此它不是一个回文数。  示例3:1234输入: 10输出: false解释: 从右向左读, 为 01 。因此它不是一个回文数">
   
     <link rel="alternative" href="/atom.xml" title="Mautea日常技术分享" type="application/atom+xml">
   
@@ -187,7 +187,9 @@
 
 <h4 id="示例3"><a href="#示例3" class="headerlink" title="示例3:"></a>示例3:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">输入: 10</span><br><span class="line">输出: <span class="literal">false</span></span><br><span class="line">解释: 从右向左读, 为 01 。因此它不是一个回文数</span><br></pre></td></tr></table></figure>
 
-<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><p>反转判断反转后的值是否等于反转前的值，但是得考虑整数溢出的情况， 所以我们可以反转一般进行判断两个值是否相等;<br>考虑几种特殊情况 负数, 以及被10整除（不包括0）的数都不是回文数</p>
+<a id="more"></a>
+
+<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><p>将原值进行反转，判断反转后的值是否等于反转前的值，但是得考虑整数溢出的情况， 所以我们可以反转一半进行判断两个值是否相等;<br>考虑几种特殊情况 负数, 以及被10整除（不包括0）的数都不是回文数</p>
 <h3 id="解答代码"><a href="#解答代码" class="headerlink" title="解答代码"></a>解答代码</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">func isPalindrome(x int) bool &#123;</span><br><span class="line">	<span class="keyword">if</span> x &lt; 0 || (x % 10 == 0 &amp;&amp; x != 0) &#123;</span><br><span class="line">		<span class="built_in">return</span> <span class="literal">false</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	revertedNumber := 0 </span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span> x &gt; revertedNumber &#123;</span><br><span class="line">		revertedNumber = revertedNumber * 10 + x % 10</span><br><span class="line">		x = x / 10</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">return</span> x == revertedNumber || x == revertedNumber / 10</span><br><span class="line">&#125;</span><br><span class="line">`</span><br></pre></td></tr></table></figure>
 
 
