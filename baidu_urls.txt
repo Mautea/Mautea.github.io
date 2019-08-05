@@ -1,1 +1,1 @@
-https://www.mautea.cn/posts/algorithm/common-prefix.html
+https://www.mautea.cn/posts/algorithm/isValid.html

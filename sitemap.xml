@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.mautea.cn/posts/algorithm/isValid.html</loc>
+    
+    <lastmod>2019-08-05T15:29:17.749Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.mautea.cn/posts/algorithm/common-prefix.html</loc>
     
-    <lastmod>2019-08-02T16:12:56.618Z</lastmod>
+    <lastmod>2019-08-02T16:13:08.684Z</lastmod>
     
   </url>
   
