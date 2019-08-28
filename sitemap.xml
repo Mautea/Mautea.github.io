@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.mautea.cn/posts/algorithm/merge_list.html</loc>
+    
+    <lastmod>2019-08-28T15:16:07.530Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.mautea.cn/posts/algorithm/isValid.html</loc>
     
     <lastmod>2019-08-05T15:31:17.157Z</lastmod>
