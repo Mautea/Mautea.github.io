@@ -1,1 +1,1 @@
-https://www.mautea.cn/posts/algorithm/merge_list.html
+https://www.mautea.cn/posts/algorithm/remove_duplicates.html

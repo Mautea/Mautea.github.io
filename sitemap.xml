@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.mautea.cn/posts/algorithm/remove_duplicates.html</loc>
+    
+    <lastmod>2019-08-29T15:37:44.127Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.mautea.cn/posts/algorithm/merge_list.html</loc>
     
-    <lastmod>2019-08-28T15:20:07.493Z</lastmod>
+    <lastmod>2019-08-28T15:25:22.575Z</lastmod>
     
   </url>
   
