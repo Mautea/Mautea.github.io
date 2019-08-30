@@ -1,1 +1,1 @@
-https://www.mautea.cn/posts/algorithm/remove_element.html
+https://www.mautea.cn/posts/algorithm/strStr.html

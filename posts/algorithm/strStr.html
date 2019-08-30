@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://www.mautea.cn">
-  <title>移除元素 | Mautea日常技术分享</title>
+  <title>实现 strStr() 函数 | Mautea日常技术分享</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="题目描述给定一个数组 nums 和一个值 val，你需要原地移除所有数值等于 val 的元素，返回移除后数组的新长度。 不要使用额外的数组空间，你必须在原地修改输入数组并在使用 O(1) 额外空间的条件下完成。 元素的顺序可以改变。你不需要考虑数组中超出新长度后面的元素。 示例1:12345给定 nums = [3,2,2,3], val = 3,函数应该返回新的长度 2, 并且 nums 中的前">
+  <meta name="description" content="题目描述给定一个 haystack 字符串和一个 needle 字符串，在 haystack 字符串中找出 needle 字符串出现的第一个位置 (从0开始)。如果不存在，则返回  -1。 示例1:12输入: haystack = &quot;hello&quot;, needle = &quot;ll&quot;输出: 2  示例2:12输入: haystack = &quot;aaaaa&quot;, needle = &quot;bba&quot;输出: -1">
 <meta name="keywords" content="编程">
 <meta property="og:type" content="article">
-<meta property="og:title" content="移除元素">
-<meta property="og:url" content="https://www.mautea.cn/posts/algorithm/remove_element.html">
+<meta property="og:title" content="实现 strStr() 函数">
+<meta property="og:url" content="https://www.mautea.cn/posts/algorithm/strStr.html">
 <meta property="og:site_name" content="Mautea日常技术分享">
-<meta property="og:description" content="题目描述给定一个数组 nums 和一个值 val，你需要原地移除所有数值等于 val 的元素，返回移除后数组的新长度。 不要使用额外的数组空间，你必须在原地修改输入数组并在使用 O(1) 额外空间的条件下完成。 元素的顺序可以改变。你不需要考虑数组中超出新长度后面的元素。 示例1:12345给定 nums = [3,2,2,3], val = 3,函数应该返回新的长度 2, 并且 nums 中的前">
+<meta property="og:description" content="题目描述给定一个 haystack 字符串和一个 needle 字符串，在 haystack 字符串中找出 needle 字符串出现的第一个位置 (从0开始)。如果不存在，则返回  -1。 示例1:12输入: haystack = &quot;hello&quot;, needle = &quot;ll&quot;输出: 2  示例2:12输入: haystack = &quot;aaaaa&quot;, needle = &quot;bba&quot;输出: -1">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-30T15:15:52.806Z">
+<meta property="og:updated_time" content="2019-08-30T15:31:37.870Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="移除元素">
-<meta name="twitter:description" content="题目描述给定一个数组 nums 和一个值 val，你需要原地移除所有数值等于 val 的元素，返回移除后数组的新长度。 不要使用额外的数组空间，你必须在原地修改输入数组并在使用 O(1) 额外空间的条件下完成。 元素的顺序可以改变。你不需要考虑数组中超出新长度后面的元素。 示例1:12345给定 nums = [3,2,2,3], val = 3,函数应该返回新的长度 2, 并且 nums 中的前">
+<meta name="twitter:title" content="实现 strStr() 函数">
+<meta name="twitter:description" content="题目描述给定一个 haystack 字符串和一个 needle 字符串，在 haystack 字符串中找出 needle 字符串出现的第一个位置 (从0开始)。如果不存在，则返回  -1。 示例1:12输入: haystack = &quot;hello&quot;, needle = &quot;ll&quot;输出: 2  示例2:12输入: haystack = &quot;aaaaa&quot;, needle = &quot;bba&quot;输出: -1">
   
     <link rel="alternative" href="/atom.xml" title="Mautea日常技术分享" type="application/atom+xml">
   
@@ -160,38 +160,35 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-remove-element" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-strStr" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      移除元素
+      实现 strStr() 函数
     </h1>
   
 
         
-        <a href="/posts/algorithm/remove_element.html" class="archive-article-date">
-  	<time datetime="2019-08-30T15:09:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-30</time>
+        <a href="/posts/algorithm/strStr.html" class="archive-article-date">
+  	<time datetime="2019-08-30T15:25:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-30</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>给定一个数组 nums 和一个值 val，你需要原地移除所有数值等于 val 的元素，返回移除后数组的新长度。</p>
-<p>不要使用额外的数组空间，你必须在原地修改输入数组并在使用 O(1) 额外空间的条件下完成。</p>
-<p>元素的顺序可以改变。你不需要考虑数组中超出新长度后面的元素。</p>
-<h4 id="示例1"><a href="#示例1" class="headerlink" title="示例1:"></a>示例1:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">给定 nums = [3,2,2,3], val = 3,</span><br><span class="line"></span><br><span class="line">函数应该返回新的长度 2, 并且 nums 中的前两个元素均为 2。</span><br><span class="line"></span><br><span class="line">你不需要考虑数组中超出新长度后面的元素。</span><br></pre></td></tr></table></figure>
+        <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>给定一个 haystack 字符串和一个 needle 字符串，在 haystack 字符串中找出 needle 字符串出现的第一个位置 (从0开始)。如果不存在，则返回  -1。</p>
+<h4 id="示例1"><a href="#示例1" class="headerlink" title="示例1:"></a>示例1:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: haystack = <span class="string">"hello"</span>, needle = <span class="string">"ll"</span></span><br><span class="line">输出: 2</span><br></pre></td></tr></table></figure>
 
-<h4 id="示例2"><a href="#示例2" class="headerlink" title="示例2:"></a>示例2:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">给定 nums = [0,1,2,2,3,0,4,2], val = 2,</span><br><span class="line"></span><br><span class="line">函数应该返回新的长度 5, 并且 nums 中的前五个元素为 0, 1, 3, 0, 4。</span><br><span class="line"></span><br><span class="line">注意这五个元素可为任意顺序。</span><br><span class="line"></span><br><span class="line">你不需要考虑数组中超出新长度后面的元素。</span><br></pre></td></tr></table></figure>
+<h4 id="示例2"><a href="#示例2" class="headerlink" title="示例2:"></a>示例2:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: haystack = <span class="string">"aaaaa"</span>, needle = <span class="string">"bba"</span></span><br><span class="line">输出: -1</span><br></pre></td></tr></table></figure>
 
 <a id="more"></a>
 
-<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><p>双指针法</p>
-<p>我们可以保留两个指针 i 和 j，其中 i 是慢指针，j 是快指针。<br>for 循环数组 当nums[j] != val 时 nums[i] = nums[j]</p>
-<h3 id="解答代码"><a href="#解答代码" class="headerlink" title="解答代码"></a>解答代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">func removeElement(nums []int, val int) int &#123;</span><br><span class="line">    numsLen := len(nums)</span><br><span class="line">    i := 0</span><br><span class="line"></span><br><span class="line">    for j := 0; j &lt; numsLen; j ++ &#123;</span><br><span class="line">        if (nums[j] != val) &#123;</span><br><span class="line">            nums[i] = nums[j]</span><br><span class="line">            i ++</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    return i</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><p>for 循环 判断 haystack[1: i + len(needle)] == needle 如果相等 return i </p>
+<h3 id="解答代码"><a href="#解答代码" class="headerlink" title="解答代码"></a>解答代码</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">func strStr(haystack string, needle string) int &#123;</span><br><span class="line">    <span class="keyword">if</span> <span class="string">""</span> == needle &#123;</span><br><span class="line">        <span class="built_in">return</span> 0</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    haysLen := len(haystack)</span><br><span class="line">    needleLen := len(needle)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i := 0; i &lt;= haysLen - needleLen; i ++ &#123;</span><br><span class="line">        <span class="keyword">if</span> haystack[1: i + needleLen] == needle &#123;</span><br><span class="line">            <span class="built_in">return</span> i</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; </span><br><span class="line"></span><br><span class="line">    <span class="built_in">return</span> -1</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
       
@@ -304,7 +301,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://www.mautea.cn/posts/algorithm/remove_element.html" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://www.mautea.cn/posts/algorithm/strStr.html" alt="微信分享二维码">
     </div>
 </div>
 
@@ -318,18 +315,9 @@
   
 <nav id="article-nav">
   
-    <a href="/posts/algorithm/strStr.html" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          实现 strStr() 函数
-        
-      </div>
-    </a>
   
-  
-    <a href="/posts/algorithm/remove_duplicates.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">删除排序数组中的重复项</div>
+    <a href="/posts/algorithm/remove_element.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">移除元素</div>
       <i class="icon-circle-right"></i>
     </a>
   
