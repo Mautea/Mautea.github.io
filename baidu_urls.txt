@@ -1,1 +1,1 @@
-https://www.mautea.cn/posts/algorithm/strStr.html
+https://www.mautea.cn/posts/algorithm/search_insert.html
